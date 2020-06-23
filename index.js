@@ -7,6 +7,20 @@ nodeMailer.createTestAccount((err, account) => {
     return process.exit(1);
   } else {
     console.log("Credentials obtained, sending message...");
-    console.log(account);
+    createTransporter(account);
   }
 });
+
+const createTransporter = userEtherealData => {
+  //creating smtp object
+  let transporter = nodeMailer.createTransport({
+    host: userEtherealData.smtp.host,
+    port: userEtherealData.smtp.port,
+    secure: userEtherealData.smtp.secure,
+    auth: {
+      user: userEtherealData.user,
+      pass: userEtherealData.pass
+    }
+  });
+  console.log("userEtherealData", userEtherealData);
+};
