@@ -22,5 +22,24 @@ const createTransporter = userEtherealData => {
       pass: userEtherealData.pass
     }
   });
-  console.log("userEtherealData", userEtherealData);
+  structureMailOption(transporter);
+  //   console.log("userEtherealData", userEtherealData);
+};
+
+const structureMailOption = transporter => {
+  let mailOption = {
+    from: "Sender Name <sender@example.com>",
+    to: "Recipient <recipient@example.com>",
+    subject: "the wow of nodemailer",
+    text: "sending hello world to my user",
+    html: `<h2> some html elements</h2>`
+  };
+  transporter.sendMail(mailOption, (err, info) => {
+    if (err) {
+      console.log(err.message);
+    } else {
+      console.log(info.massageId);
+      console.log(nodeMailer.getTestMessageUrl(info));
+    }
+  });
 };
