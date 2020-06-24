@@ -23,13 +23,12 @@ const createTransporter = userEtherealData => {
     }
   });
   structureMailOption(transporter);
-  //   console.log("userEtherealData", userEtherealData);
 };
 
 const structureMailOption = transporter => {
   let mailOption = {
-    from: "Sender Name <sender@example.com>",
-    to: "Recipient <recipient@example.com>",
+    from: "princewillchime43@gmail.com",
+    to: "recieverEmail@gmail.com",
     subject: "the wow of nodemailer",
     text: "sending hello world to my user",
     html: `<h2> some html elements</h2>`
@@ -38,7 +37,7 @@ const structureMailOption = transporter => {
     if (err) {
       console.log(err.message);
     } else {
-      console.log(info.massageId);
+      console.log(info.messageId);
       console.log(nodeMailer.getTestMessageUrl(info));
     }
   });

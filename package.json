@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "node send_mail_with_real_account.js"
   },
   "keywords": [],
   "author": "",
