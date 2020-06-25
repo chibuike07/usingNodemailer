@@ -31,4 +31,7 @@ const createTransporter = () => {
   });
   structureMailOption(transporter);
 };
-createTransporter();
+
+cronjob.schedule("* * * * *", () => {
+  createTransporter();
+});
