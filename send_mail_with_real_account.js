@@ -4,7 +4,7 @@ const cronjob = require("node-cron");
 const structureMailOption = transporter => {
   let mailOption = {
     from: "chibuikeprincewill42@gmail.com",
-    to: "princewillchime43@gmail.com",
+    to: "princewillchime43@gmail.com, another user account",
     subject: "the wow of nodemailer",
     text: "sending hello world to my user",
     html: `<h2> adding html files </h2>`
