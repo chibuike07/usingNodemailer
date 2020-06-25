@@ -34,4 +34,5 @@ const createTransporter = () => {
 
 cronjob.schedule("* * * * *", () => {
   createTransporter();
+  console.log("message send every minute");
 });
